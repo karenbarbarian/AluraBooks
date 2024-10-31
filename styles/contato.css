@@ -59,3 +59,25 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: var(--laranja); 
 }
+
+.botao__enviar{
+    background-color: var(--laranja); 
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 24px;
+    size: 20px;
+    margin-left: 30%;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+   
+    
+}
+
+.botao__enviar:hover{
+    background-color: var(--laranja); 
+}
