@@ -35,3 +35,27 @@
     background: url("../img/Email.svg") no-repeat;
     padding-left: 2em;
 }
+
+.error {
+    border: 2px solid red;
+}
+.error-placeholder {
+    color: red;
+    
+}
+
+input[type="submit"] {
+    background-color: var(--laranja); 
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 24px;
+    size: 20px;
+}
+input[type="submit"]:hover {
+    background-color: var(--laranja); 
+}

@@ -16,7 +16,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     
 </head>
 
-<body>
+<body onload="setEmailPlaceholder()">
      <header class="cabecalho">
       <div class="container">
         <input type="checkbox" id="menu" class="container__botao">
@@ -201,7 +201,12 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
            <section class="contato">
             <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
             <p class="contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
-            <input type="email" placeholder="Cadastre seu e-mail" class="contato__email">
+            <!-- <input type="email" placeholder="Cadastre seu e-mail" class="contato__email"> -->
+            
+            <form onsubmit="return validateEmail()">
+            <input type="text" id="email" name="email" class="contato__email" required>
+              <input type="submit" value="Enviar" placeholder="Cadastre seu e-mail" class="contato__email">
+            </form>
 
            </section>
            <hr/>
@@ -219,7 +224,45 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     type: 'bullets',
   },
         });
+
+        function setEmailPlaceholder() {
+            const emailInput = document.getElementById('email');
+            emailInput.placeholder = 'Digite seu email'; // Define o placeholder ao carregar a página
+        }
+         
+        function validateEmail() {
+            const emailInput = document.getElementById('email');
+            const emailValue = emailInput.value;
+            const regex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+
+            if (!regex.test(emailValue)) {
+                emailInput.classList.add('error');
+                emailInput.classList.add('error-placeholder');
+                emailInput.setAttribute('placeholder','Email inválido')
+                emailInput.value=''
+                
+                // emailInput.placeholder = 'Email inválido';
+                
+                return false; // Impede o envio do formulário
+            } else {
+                emailInput.classList.remove('error');
+                emailInput.placeholder = 'Digite seu email'; // Reseta o placeholder
+                emailInput.classList.remove('error-placeholder');
+            }
+            return true; // Permite o envio do formulário
+        }
       </script>
+      <!-- <script>
+        function validateEmail() {
+          const emailInput = document.getElementById('email').value;
+          const regex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+          if (!regex.test(emailInput)) {
+            alert('Por favor, insira um email válido.');
+            return false; // Impede o envio do formulário
+          }
+          return true; // Permite o envio do formulário
+        }
+        </script> -->
 
 </body>
 </html>
