@@ -86,7 +86,30 @@ input[type="submit"]:hover {
   
     .botao__envia{
         margin-left: 50%;
+        justify-content: center;
+       
     }
 
-  
+    .contato{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contato__titulo{
+        font-size: 24px;
+    }
+
+    .contato__email{
+        width: 90%;
+
+    }
+
+    .contato__descricao{
+        margin-right: 2em;
+        width: 30%;
+    }
+
+
+
 }
